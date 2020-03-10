@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import {signin,authenticate} from '../auth'
+import LoaderSpinner from '../images/LoaderSpinner'
 class Signin extends Component {
     constructor(props) {
         super(props)
@@ -23,6 +24,7 @@ class Signin extends Component {
     }
     handleSubmit = event => {
         event.preventDefault()
+        
         this.setState({ loading: true })
         const { email, password } = this.state
         const user = {
@@ -50,11 +52,16 @@ class Signin extends Component {
                 <h2 className="mt-5 mb-5">Signin</h2>
                 <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
                     {error}
+                    
                 </div>
-                {loading ? (<div className="jumbotron text-center">
-                    <h2>Loading...</h2>
-                </div>) : ("")}
-                <form>
+                {loading ?
+                
+                (<div className="text-center">
+                    {/* <h2>Loading...</h2> */}
+                    
+                    <h1><LoaderSpinner/></h1>
+                </div>) : 
+                <form id="form">
 
                     <div className="form-group">
                         <label className="text-muted">Email</label>
@@ -64,8 +71,8 @@ class Signin extends Component {
                         <label className="text-muted">Password</label>
                         <input type="password" className="form-control" value={password} onChange={this.handleChange("password")} />
                     </div>
-                    <button className="btn btn-raised btn-primary" onClick={this.handleSubmit}>Submit</button>
-                </form>
+                    <button className="btn btn-raised btn-dark" onClick={this.handleSubmit}>Submit</button>
+                </form>}
             </div>
         )
     }

@@ -39,7 +39,7 @@ class Signup extends Component {
                 <div className="alert alert-danger" style={{display:error?"":"none"}}> 
                     {error}
                 </div>
-                <div className="alert alert-info" style={{display:open?"":"none"}}> 
+                <div className="alert alert-success" style={{display:open?"":"none"}}> 
                     New account created successfully! <Link to="/signin">Signin here</Link>
                 </div>
                 <form>
@@ -55,7 +55,7 @@ class Signup extends Component {
                         <label className="text-muted">Password</label>
                         <input type="password" className="form-control" value={password} onChange={this.handleChange("password")} />
                     </div>
-                    <button className="btn btn-raised btn-primary" onClick={this.handleSubmit}>Submit</button>
+                    <button className="btn btn-raised btn-dark" onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
         )

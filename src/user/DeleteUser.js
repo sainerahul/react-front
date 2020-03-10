@@ -8,7 +8,7 @@ class DeleteUser extends Component {
         redirect: false
     }
     deleteConfirm = () => {
-        let answer = window.confirm("Are you sure you want to delete you account?")
+        let answer = window.confirm("Are you sure you want to delete your account?")
         if (answer) {
             this.deleteAccount()
         }
@@ -37,7 +37,7 @@ class DeleteUser extends Component {
         }
         return (
 
-            <button onClick={this.deleteConfirm} className="btn btn-raised btn-danger">Delete</button>
+            <button onClick={this.deleteConfirm} className="btn btn-raised btn-secondary">Delete<i class="fa fa-trash-o ml-2" aria-hidden="true"></i></button>
 
         )
     }
